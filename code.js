@@ -7,22 +7,19 @@ function calculate() {
   let result = (weight.value / (height.value * height.value)).toFixed(2);
 
   let final = document.getElementById("final");
-
-  let res = result;
-
-  if (res < 18.5) {
-    console.log(result + " - " + "You are Underweight, Please Consult!");
-  } else if (res >= 18.5 && res <= 24.9) {
-    console.log(result + " - " + "Your weight is Normal");
-  } else if (res >= 25 && res <= 29.9) {
-    console.log(result + " - " + "You are Overweight");
-  } else if (res >= 30 && res < 35) {
-    console.log(result + " - " + "Your weight falls under Obesity");
-  } else if (result > 35) {
-    console.log(
-      result + " - " + "Your weight falls under Severe-Obesity, Please Consult!"
-    );
-  }
+  let text = document.getElementById("text");
 
   final.innerText = result;
+
+  if (result < 18.5) {
+    final.innerText = "You are Underweight, Please Consult!";
+  } else if (result >= 18.5 && result <= 24.9) {
+    final.innerText = "Your weight is Normal";
+  } else if (result >= 25 && result <= 29.9) {
+    final.innerText = "You are Overweight";
+  } else if (result >= 30 && result < 35) {
+    final.innerText = "Your weight falls under Obesity";
+  } else if (result > 35) {
+    final.innerText = "Your weight falls under Severe-Obesity, Please Consult!";
+  }
 }
